@@ -10,7 +10,7 @@
 
 - [Objective](#Objective)
 - [Overview](#Overview)
-- [Technologies](#Technologies-used)
+- [Technologies used](#Technologies-used)
 - [Methodology](#project-description)
 - [Results](#project-results)
 
