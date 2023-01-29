@@ -1,22 +1,72 @@
-# Recommendation_system_content-based
+# Recommendation-system-content-based
 
-##Overview
-Recommendation systems are a collection of algorithms used to recommend items to users based on information taken from the user. These systems have become ubiquitous, and can be commonly seen in online stores, movies databases and job finders. In this notebook, we will explore Content-based recommendation systems and implement a simple version of one using Python and the Pandas library.
+<img src="Images/recommender-system-for-movie-recommendation.jpg">
+<br>
+
+!['Project Status'](https://img.shields.io/badge/Project%20Status-Completed-green)
+!['Last Commit'](https://img.shields.io/github/last-commit/ismael616/Recommendation_system_content-based)
+
+## Table of contents
+
+- [Objective](#Objective)
+- [Overview](#Overview)
+- [Technologies](#technologies)
+- [Methodology](#project-description)
+- [Results](#project-results)
+
+## Objective
+[(Back to top)](#Table-of-contents)
+
+In this notebook, we will explore Content-based recommendation systems and implement a simple version of one using Python and the Pandas library.
+
+## Overview
+[(Back to top)](#Table-of-contents)
+
+Recommendation systems are a collection of algorithms used to recommend items to users based on information taken from the user. These systems have become ubiquitous, and can be commonly seen in online stores, movies databases and job finders.
 Now, let's take a look at how to implement **Content-Based** or **Item-Item recommendation systems**. This technique attempts to figure out what a user's favourite aspects of an item is, and then recommends items that present those aspects. In our case, we're going to try to figure out the input's favorite genres from the movies and ratings given.
 
-## Dataset
-To acquire and extract the data, simply run the following Bash scripts:  
-Dataset acquired from [GroupLens](http://grouplens.org/datasets/movielens?cm_mmc=Email_Newsletter-_-Developer_Ed%2BTech-_-WW_WW-_-SkillsNetwork-Courses-IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork-20718538&cm_mmca1=000026UJ&cm_mmca2=10006555&cm_mmca3=M12345678&cvosrc=email.Newsletter.M12345678&cvo_campaign=000026UJ&cm_mmc=Email_Newsletter-_-Developer_Ed%2BTech-_-WW_WW-_-SkillsNetwork-Courses-IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork-20718538&cm_mmca1=000026UJ&cm_mmca2=10006555&cm_mmca3=M12345678&cvosrc=email.Newsletter.M12345678&cvo_campaign=000026UJ&cm_mmc=Email_Newsletter-_-Developer_Ed%2BTech-_-WW_WW-_-SkillsNetwork-Courses-IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork-20718538&cm_mmca1=000026UJ&cm_mmca2=10006555&cm_mmca3=M12345678&cvosrc=email.Newsletter.M12345678&cvo_campaign=000026UJ&cm_mmc=Email_Newsletter-_-Developer_Ed%2BTech-_-WW_WW-_-SkillsNetwork-Courses-IBMDeveloperSkillsNetwork-ML0101EN-SkillsNetwork-20718538&cm_mmca1=000026UJ&cm_mmca2=10006555&cm_mmca3=M12345678&cvosrc=email.Newsletter.M12345678&cvo_campaign=000026UJ). Lets download the dataset. To download the data, we will use **`!wget`** to download it from IBM Object Storage.  
+## Technologies used
+[(Back to top)](#Table-of-contents)
 
-## Advantages and Disadvantages of Content-Based Filtering
+!['Python'](https://img.shields.io/badge/-Python-green)
+!['Jupyter'](https://img.shields.io/badge/-Jupyter%20Notebook-orange)
+!['Pandas'](https://img.shields.io/badge/-pandas-blue)
 
-### Advantages
+## Methodology
 
--   Learns user's preferences
--   Highly personalized for the user
+[(Back to top)](#Table-of-contents) 
 
-### Disadvantages
+### Dataset
 
--   Doesn't take into account what others think of the item, so low quality item recommendations might happen
--   Extracting data is not always intuitive
--   Determining what characteristics of the item the user dislikes or likes is not always obvious
+The fields in each record are:
+
+| Field name  | Description                 |
+| ----------- | --------------------------- |
+| ID          |Movies Id          |
+| Title       | Title of the Movies            |
+| Genre       | Categories under wich lies the Movies |
+
+### Data Processing
+
+* Proper Formatting
+* One Hot Encoding
+
+### Implementation
+
+* We take user Input to better Know the User and base the recommendations on what suits him the most :
+
+        userInput = [
+            {'title':'Breakfast Club, The', 'rating':5},
+            {'title':'Toy Story', 'rating':3.5},
+            {'title':'Jumanji', 'rating':2},
+            {'title':"Pulp Fiction", 'rating':5},
+            {'title':'Akira', 'rating':4.5}
+        ] 
+        inputMovies = pd.DataFrame(userInput)
+        inputMovies
+We apply some Data manipulation using pandas to extract the recommandation DataFrame.
+
+## Results
+We get the final recommendation table with the Movies user might like :
+!['Final Table](Images/Output.png) 
+
