@@ -42,8 +42,8 @@ The fields in each record are:
 
 | Field name  | Description                 |
 | ----------- | --------------------------- |
-| ID          |Movies Id          |
-| Title       | Title of the Movies            |
+| ID          |Movies Id                    |
+| Title       | Title of the Movies          |
 | Genre       | Categories under wich lies the Movies |
 
 ### Data Processing
@@ -55,15 +55,19 @@ The fields in each record are:
 
 * We take user Input to better Know the User and base the recommendations on what suits him the most :
 
-        userInput = [
-            {'title':'Breakfast Club, The', 'rating':5},
-            {'title':'Toy Story', 'rating':3.5},
-            {'title':'Jumanji', 'rating':2},
-            {'title':"Pulp Fiction", 'rating':5},
-            {'title':'Akira', 'rating':4.5}
-        ] 
-        inputMovies = pd.DataFrame(userInput)
-        inputMovies
+```python3
+userInput = [
+{'title':'Breakfast Club, The', 'rating':5},
+{'title':'Toy Story', 'rating':3.5},
+{'title':'Jumanji', 'rating':2},
+{'title':"Pulp Fiction", 'rating':5},
+{'title':'Akira', 'rating':4.5}] 
+inputMovies = pd.DataFrame(userInput)
+inputMovies  
+```
+
+
+
 We apply some Data manipulation using pandas to extract the recommandation DataFrame.
 
 ## Results
